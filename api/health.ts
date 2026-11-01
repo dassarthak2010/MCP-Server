@@ -1,0 +1,20 @@
+/**
+ * Lightweight health check for Vercel / uptime monitors.
+ * Does not require MCP bearer auth and does not call Google.
+ */
+
+import { SERVER_NAME, SERVER_VERSION } from "../src/server.js";
+
+export function GET(): Response {
+  return Response.json({
+    ok: true,
+    name: SERVER_NAME,
+    version: SERVER_VERSION,
+  });
+}
+
+export default {
+  fetch(): Response {
+    return GET();
+  },
+};

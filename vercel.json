@@ -1,0 +1,13 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "functions": {
+    "api/mcp.ts": {
+      "maxDuration": 60,
+      "memory": 1024
+    },
+    "api/health.ts": {
+      "maxDuration": 10,
+      "memory": 256
+    }
+  }
+}

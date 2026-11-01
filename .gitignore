@@ -1,0 +1,22 @@
+# Dependencies and build
+node_modules/
+dist/
+*.tsbuildinfo
+
+# Environment and local config
+.env
+.env.*
+!.env.example
+
+# Google OAuth credentials and tokens — never commit
+**/client_secret*.json
+**/credentials*.json
+**/token*.json
+.credentials/
+.config/
+
+# OS / editor
+.DS_Store
+*.log
+.vscode/
+!.cursor/mcp.json
