@@ -3,7 +3,8 @@
  */
 
 import { createMcpHandler } from "@modelcontextprotocol/server";
-import { createServer, SERVER_NAME } from "../server.js";
+import { SERVER_NAME } from "../constants.js";
+import { createServer } from "../server.js";
 import { unauthorizedMcpResponse } from "./bearer-auth.js";
 
 const mcpHandler = createMcpHandler(() => createServer(), {

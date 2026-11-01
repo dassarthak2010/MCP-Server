@@ -6,7 +6,7 @@
 import { createServer } from "node:http";
 import type { IncomingMessage, ServerResponse } from "node:http";
 import { handleMcpHttpRequest } from "./mcp-app.js";
-import { SERVER_NAME, SERVER_VERSION } from "../server.js";
+import { SERVER_NAME, SERVER_VERSION } from "../constants.js";
 
 const port = Number(process.env.PORT) || 3000;
 

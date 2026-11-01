@@ -15,7 +15,7 @@ The original MVP is a **local stdio** process. Remote use needs **Streamable HTT
 | Local (default) | Hosted on Vercel |
 |---|---|
 | Transport: **stdio** (`npm start`) | Transport: **Streamable HTTP** at `POST /api/mcp` |
-| Cursor launches `node dist/index.js` | Cursor connects to `https://<project>.vercel.app/api/mcp` |
+| Cursor launches `node dist/stdio.js` | Cursor connects to `https://<project>.vercel.app/api/mcp` |
 | OAuth: Desktop app + loopback (`npm run auth`) | Same local auth once; paste secrets into Vercel env (Path A) |
 | Secrets on disk under `~/.config/…` | Secrets as Vercel **Environment Variables** (no durable filesystem) |
 
@@ -96,7 +96,7 @@ Access tokens refresh in-memory per invocation using the refresh token inside `G
 | Function limits | `vercel.json` |
 | Env template | `.env.example` |
 
-Stdio entry (`src/index.ts`) is unchanged.
+Stdio entry lives at `src/stdio.ts` (compiled to `dist/stdio.js`). It must **not** be named `src/index.ts` / `src/server.ts` as a default export HTTP app — Vercel’s backends detector would treat that as the web entrypoint and crash (stdio is not HTTP). `vercel.json` sets `"framework": null` so `/api/*.ts` Functions are used instead.
 
 ---
 

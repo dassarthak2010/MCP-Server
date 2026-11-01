@@ -2,6 +2,9 @@
 /**
  * Google Workspace MCP server entry point (stdio transport).
  * Logs must go to stderr only — stdout is reserved for MCP JSON-RPC.
+ *
+ * Kept off src/index.ts / src/server.ts so Vercel’s backends auto-detect
+ * does not treat the local stdio process as an HTTP app entrypoint.
  */
 
 import { serveStdio } from "@modelcontextprotocol/server/stdio";

@@ -72,7 +72,7 @@ An example is in [`.cursor/mcp.json`](.cursor/mcp.json):
     "google-workspace": {
       "type": "stdio",
       "command": "node",
-      "args": ["${workspaceFolder}/dist/index.js"],
+      "args": ["${workspaceFolder}/dist/stdio.js"],
       "env": {
         "GOOGLE_OAUTH_CLIENT_PATH": "${userHome}/.config/google-workspace-mcp/client_secret.json",
         "GOOGLE_OAUTH_TOKEN_PATH": "${userHome}/.config/google-workspace-mcp/token.json"
@@ -113,7 +113,8 @@ Restart or refresh MCP servers in Cursor and confirm both tools appear: `send_em
 
 ```text
 src/
-  index.ts              # stdio entry
+  stdio.ts              # local Cursor stdio entry (not a Vercel HTTP entry)
+  constants.ts          # name/version (safe for /api/health)
   server.ts             # MCP factory + tool registration
   auth/                 # OAuth client + npm run auth
   http/                 # Streamable HTTP + bearer gate (Vercel / local)
