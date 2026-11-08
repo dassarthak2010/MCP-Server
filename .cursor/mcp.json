@@ -8,6 +8,12 @@
         "GOOGLE_OAUTH_CLIENT_PATH": "${userHome}/.config/google-workspace-mcp/client_secret.json",
         "GOOGLE_OAUTH_TOKEN_PATH": "${userHome}/.config/google-workspace-mcp/token.json"
       }
+    },
+    "google-workspace-remote": {
+      "url": "https://mcp-server-sarthak-aae9.vercel.app/api/mcp",
+      "headers": {
+        "Authorization": "Bearer ${env:GOOGLE_WORKSPACE_MCP_TOKEN}"
+      }
     }
   }
 }
